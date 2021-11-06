@@ -8,11 +8,11 @@
 #define BLK_SIZE 16
 
 // convert plaintext representing a hex number to its hex representation
-void str2hex(const char* str, uint8_t* hex) {
+void str2hex(const char* str, uint8_t* hex, int len) {
     char tmp[2];
     int i;
 
-    for (i=0; i<16; i++) {
+    for (i=0; i<len; i++) {
         tmp[0] = str[2*i];
         tmp[1] = str[2*i+1];
         hex[i] = strtol(tmp, NULL, 16);
@@ -24,7 +24,7 @@ void str2hex(const char* str, uint8_t* hex) {
 uint8_t* pad_message(char* msg, int* len) {
     *len = (int)(strlen(msg)%BLK_SIZE == 0 ? strlen(msg)/2 : (strlen(msg)/BLK_SIZE+1)*BLK_SIZE/2);
     uint8_t* padded = (uint8_t*) calloc(*len, sizeof(uint8_t));
-    str2hex(msg, padded);
+    str2hex(msg, padded, *len);
     return padded;
 }
 
@@ -158,7 +158,7 @@ int main(int argc, char* argv[]) {
     int i;
 
     // parse key from input to array
-    str2hex(argv[1], key);
+    str2hex(argv[1], key, 16);
 
     // pad message with zeros to reach a length divisible by 16 (and convert str to hex values)
     int len;
