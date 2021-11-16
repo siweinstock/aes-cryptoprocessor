@@ -8,10 +8,11 @@ module ke_tb;
     ke sched(.key(key), .expanded(expanded));
 
     initial begin
-        $dumpfile("ke_tb.vcd");
-        $dumpvars(0, ke_tb);
+		$monitor($time, " expanded key is: \n%x", expanded);
 
         key = 128'h2b7e151628aed2a6abf7158809cf4f3c;
         #10;
+		key = 129'h0102030405060708090a0b0c0d0e0f10;
+		#10;
     end
 endmodule

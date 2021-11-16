@@ -8,17 +8,12 @@ module sbox_tb;
     sbox sb(.i(i), .o(o));
 
     initial begin
-        $dumpfile("sbox_tb.vcd");
-        $dumpvars(0, sbox_tb);
-
+		$monitor($time, ": sbox[%x]=%x", i, o);
+		
         for (i=0; i<255; i++) begin
-            $display(i);
-            #5;
+            #1;
         end
 
-        #5;
-        $display("Done");
-        $finish;        
     end
 
 endmodule

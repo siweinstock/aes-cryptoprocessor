@@ -9,12 +9,13 @@ module ke_core_tb;
     ke_core kc(.word_in(word_in), .word_out(word_out), .i(i));
 
     initial begin
-        $dumpfile("ke_core_tb.vcd");
-        $dumpvars(0, ke_core_tb);
+        $monitor("i=%d:\nword in:  %x\nword out: %x\n---\n", i, word_in, word_out);
 
         i=1;
         word_in = 128'h2b7e151628aed2a6abf7158809cf4f3c;
-        #40;
+        #1;
+		i=2;
+		word_in = 128'ha0fafe1788542cb123a339392a6c7605;
 
 
     end
