@@ -27,9 +27,9 @@ module ke_core (word_in, word_out, i);
 
         // for all other words
         // Wn = Wn-1 ^ Wn-4
-        tmp[95:64] <= word_in[95:64] ^  tmp[127:96];
-        tmp[63:32] <= word_in[63:32] ^ tmp[95:64];
-        tmp[31:0] <= word_in[31:0] ^ tmp[63:32];
+        tmp[95:64] = word_in[95:64] ^  tmp[127:96];
+        tmp[63:32] = word_in[63:32] ^ tmp[95:64];
+        tmp[31:0] = word_in[31:0] ^ tmp[63:32];
 
     end
 
