@@ -26,11 +26,15 @@ module enc_tb;
         plaintext = 128'h30c81c46a35ce411e5fbc1191a0a52ef;
         #10;
         enable = 1;
+        key = 128'h00000000000000000000000000000000;
+        plaintext = 128'h00000000000000000000000000000000;
+        #10;
+        key = 1408'h2b7e151628aed2a6abf7158809cf4f3c;
         plaintext = 128'hf69f2445df4f9b17ad2b417be66c3710;
         #10;
         enable = 0;
         plaintext = 128'h0;
-        #200;
+        #120;
         
         $finish;
 
