@@ -262,7 +262,7 @@ module sbox (i, o);
             8'hFD: o = 8'h54;
             8'hFE: o = 8'hbb;
             8'hFF: o = 8'h16;
-            default: o = 8'h00;
+            default: o = 8'hx;
         endcase
     end
 
