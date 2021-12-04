@@ -1,7 +1,10 @@
-module add_round_key (state, key, state_out);
+module add_round_key (state, key, state_out, vin, vout);
 	input [127:0] state;
 	input [127:0] key;
+	input vin;
 	output reg [127:0] state_out;
+	output reg vout;
+
 	wire [127:0] state_out_combi;
 	
 	// Here is the combinational part
@@ -14,6 +17,7 @@ module add_round_key (state, key, state_out);
 	always@(*)
     begin
         state_out <= state_out_combi; // copy the combinational result
+		vout <= vin;
     end
 	
 
