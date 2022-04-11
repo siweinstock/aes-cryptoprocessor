@@ -1,0 +1,510 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+# Date created = 17:59:04  March 09, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		swerv_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSXFC6D6F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY swerv
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:59:04  MARCH 09, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_AJ4 -to reset
+set_global_assignment -name SOURCE_FILE pic_map_auto.h
+set_global_assignment -name VERILOG_INCLUDE_FILE common_defines.vh
+set_global_assignment -name SOURCE_FILE include/global.h
+set_global_assignment -name SOURCE_FILE include/build.h
+set_global_assignment -name BDF_FILE block.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE swerv_wrapper.sv
+set_global_assignment -name SYSTEMVERILOG_FILE swerv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pic_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dma_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_trigger.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_stbuf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_lsc_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_ecc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_dccm_mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_dccm_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_clkdomain.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_bus_intf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_bus_buffer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu_addrcheck.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lsu/lsu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lib/svci_to_axi4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lib/mem_lib.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lib/beh_lib.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lib/axi4_to_ahb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lib/ahb_to_axi4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE include/swerv_types.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_mem_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_ifc_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_iccm_mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_ic_mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_compress_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_bp_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu_aln_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ifu/ifu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE exu/exu_mul_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE exu/exu_div_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE exu/exu_alu_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE exu/exu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dmi/rvjtag_tap.sv
+set_global_assignment -name VERILOG_FILE dmi/dmi_wrapper.v
+set_global_assignment -name VERILOG_FILE dmi/dmi_jtag_to_core_sync.v
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec_trigger.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec_tlu_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec_ib_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec_gpr_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec_decode_ctl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dec/dec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dbg/dbg.sv
+set_global_assignment -name QIP_FILE pll.qip
+set_global_assignment -name SIP_FILE pll.sip
+set_global_assignment -name QIP_FILE pllclk.qip
+set_global_assignment -name SIP_FILE pllclk.sip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to pin_name1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name VIRTUAL_PIN ON -to active_state
+set_instance_assignment -name VIRTUAL_PIN ON -to core_dbg_cmd_done
+set_instance_assignment -name VIRTUAL_PIN ON -to core_dbg_cmd_fail
+set_instance_assignment -name VIRTUAL_PIN ON -to core_dbg_rddata
+set_instance_assignment -name VIRTUAL_PIN ON -to core_rst_l
+set_instance_assignment -name VIRTUAL_PIN ON -to "dbg:dbg"
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_bus_clk_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_cmd_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_cmd_size
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_cmd_type
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_cmd_wrdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dbg_rst_l
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_clk_override
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_dma_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_rd_addr_hi
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_rd_addr_lo
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_rd_data_hi
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_rd_data_lo
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_rden
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_wr_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_wr_data
+set_instance_assignment -name VIRTUAL_PIN ON -to dccm_wren
+set_instance_assignment -name VIRTUAL_PIN ON -to debug_brkpt_status
+set_instance_assignment -name VIRTUAL_PIN ON -to "dec:dec"
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_dbg_rddata
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_br_immed_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_ctl_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_data_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_immed_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_pc_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i0_pc_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_br_immed_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_ctl_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_data_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_immed_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_pc_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_i1_pc_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_lsu_offset_d
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br0_wb_pkt.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br0_wb_pkt.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br0_wb_pkt.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br0_wb_pkt.index
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br1_wb_pkt.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br1_wb_pkt.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br1_wb_pkt.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_br1_wb_pkt.index
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_core_ecc_disable
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_dma_qos_prty
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_flush_path_wb
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_i0_pc_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_i1_pc_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_ic_diag_pkt.icache_dicawics
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_ic_diag_pkt.icache_wrdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_meicurpl
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_meipt
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_mrac_ff
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_perfcnt0
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_perfcnt1
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_perfcnt2
+set_instance_assignment -name VIRTUAL_PIN ON -to dec_tlu_perfcnt3
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_araddr
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arburst
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arlen
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arprot
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arready
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arsize
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_arvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awaddr
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awburst
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awlen
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awprot
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awready
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awsize
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_awvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_bid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_bready
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_bresp
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_bvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rlast
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rready
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rresp
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_rvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_wlast
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_wready
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_wstrb
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_axi_wvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_bus_clk_en
+set_instance_assignment -name VIRTUAL_PIN ON -to "dma_ctrl:dma_ctrl"
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_dbg_rddata
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_mem_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_mem_sz
+set_instance_assignment -name VIRTUAL_PIN ON -to dma_mem_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_hard_reset
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_reg_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_reg_en
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_reg_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_reg_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to dmi_reg_wr_en
+set_instance_assignment -name VIRTUAL_PIN ON -to extintsrc_req
+set_instance_assignment -name VIRTUAL_PIN ON -to "exu:exu"
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_csr_rs1_e1
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_div_result
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_flush_path_final
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_br_bank_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_br_fghr_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_br_hist_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_br_index_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_flush_path_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_pc_e1
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_result_e1
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i0_result_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_br_bank_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_br_fghr_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_br_hist_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_br_index_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_flush_path_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_pc_e1
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_result_e1
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_i1_result_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_lsu_rs1_d
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_lsu_rs2_d
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_eghr
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.btag
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.index
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.prett
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mp_pkt.toffset
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_mul_result_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to exu_npc_e4
+set_instance_assignment -name VIRTUAL_PIN ON -to gpr_i0_rs1_d
+set_instance_assignment -name VIRTUAL_PIN ON -to gpr_i0_rs2_d
+set_instance_assignment -name VIRTUAL_PIN ON -to gpr_i1_rs1_d
+set_instance_assignment -name VIRTUAL_PIN ON -to gpr_i1_rs2_d
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.btag
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.index
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.prett
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_brp.toffset
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.btag
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.index
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.prett
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_predict_p_d.toffset
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_result_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_result_e4_eff
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs1_bypass_data_d
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs1_bypass_data_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs1_bypass_data_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs2_bypass_data_d
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs2_bypass_data_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to i0_rs2_bypass_data_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.btag
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.index
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.prett
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_brp.toffset
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.bank
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.btag
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.fghr
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.hist
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.index
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.prett
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_predict_p_d.toffset
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_result_e4_eff
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs1_bypass_data_d
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs1_bypass_data_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs1_bypass_data_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs2_bypass_data_d
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs2_bypass_data_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to i1_rs2_bypass_data_e3
+set_instance_assignment -name VIRTUAL_PIN ON -to i_cpu_halt_req
+set_instance_assignment -name VIRTUAL_PIN ON -to i_cpu_run_req
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_rd_en
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_tag_array
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_way
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_wr_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_debug_wr_en
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_premux_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_rd_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_rd_en
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_rd_hit
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_rw_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_sel_premux_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_tag_perr
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_tag_valid
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_wr_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ic_wr_en
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_dma_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_rd_data
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_rden
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_rw_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_wr_data
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_wr_size
+set_instance_assignment -name VIRTUAL_PIN ON -to iccm_wren
+set_instance_assignment -name VIRTUAL_PIN ON -to icm_clk_override
+set_instance_assignment -name VIRTUAL_PIN ON -to ictag_debug_rd_data
+set_instance_assignment -name VIRTUAL_PIN ON -to "ifu:ifu"
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_araddr
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arburst
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arcache
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arlen
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arlock
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arprot
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arqos
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arready
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arregion
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arsize
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_arvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awaddr
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awburst
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awcache
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awlen
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awlock
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awprot
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awqos
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awready
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awregion
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awsize
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_awvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_bid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_bready
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_bresp
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_bvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rlast
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rready
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rresp
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_rvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_wlast
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_wready
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_wstrb
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_axi_wvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_bus_clk_en
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i0_cinst
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i0_instr
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i0_pc
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i1_cinst
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i1_instr
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_i1_pc
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_ic_debug_rd_data
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_illegal_inst
+set_instance_assignment -name VIRTUAL_PIN ON -to ifu_pmu_instr_aligned
+set_instance_assignment -name VIRTUAL_PIN ON -to "lsu:lsu"
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_araddr
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arburst
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arcache
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arlen
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arlock
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arprot
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arqos
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arready
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arregion
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arsize
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_arvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awaddr
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awburst
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awcache
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awlen
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awlock
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awprot
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awqos
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awready
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awregion
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awsize
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_awvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_bid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_bready
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_bresp
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_bvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rlast
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rready
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rresp
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_rvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_wlast
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_wready
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_wstrb
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_axi_wvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_bus_clk_en
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_error_pkt_dc3.addr
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_freeze_dc3
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_imprecise_error_addr_any
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_nonblock_load_data
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_nonblock_load_data_tag
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_nonblock_load_inv_tag_dc5
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_nonblock_load_tag_dc3
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_p.store_data_bypass_e4_c1
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_p.store_data_bypass_e4_c2
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_p.store_data_bypass_e4_c3
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_result_corr_dc4
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_result_dc3
+set_instance_assignment -name VIRTUAL_PIN ON -to lsu_trigger_match_dc3
+set_instance_assignment -name VIRTUAL_PIN ON -to mpc_debug_halt_ack
+set_instance_assignment -name VIRTUAL_PIN ON -to mpc_debug_halt_req
+set_instance_assignment -name VIRTUAL_PIN ON -to mpc_debug_run_ack
+set_instance_assignment -name VIRTUAL_PIN ON -to mpc_debug_run_req
+set_instance_assignment -name VIRTUAL_PIN ON -to mpc_reset_run_req
+set_instance_assignment -name VIRTUAL_PIN ON -to nmi_int
+set_instance_assignment -name VIRTUAL_PIN ON -to nmi_vec
+set_instance_assignment -name VIRTUAL_PIN ON -to o_cpu_halt_ack
+set_instance_assignment -name VIRTUAL_PIN ON -to o_cpu_halt_status
+set_instance_assignment -name VIRTUAL_PIN ON -to o_cpu_run_ack
+set_instance_assignment -name VIRTUAL_PIN ON -to o_debug_mode_status
+set_instance_assignment -name VIRTUAL_PIN ON -to pic_claimid
+set_instance_assignment -name VIRTUAL_PIN ON -to "pic_ctrl:pic_ctrl_inst"
+set_instance_assignment -name VIRTUAL_PIN ON -to pic_pl
+set_instance_assignment -name VIRTUAL_PIN ON -to picm_addr
+set_instance_assignment -name VIRTUAL_PIN ON -to picm_rd_data
+set_instance_assignment -name VIRTUAL_PIN ON -to picm_wr_data
+set_instance_assignment -name VIRTUAL_PIN ON -to pred_correct_npc_e2
+set_instance_assignment -name VIRTUAL_PIN ON -to rst_l
+set_instance_assignment -name VIRTUAL_PIN ON -to rst_vec
+set_instance_assignment -name VIRTUAL_PIN ON -to "rvoclkhdr:active_cg"
+set_instance_assignment -name VIRTUAL_PIN ON -to "rvoclkhdr:free_cg"
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_araddr
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arburst
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arcache
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arlen
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arlock
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arprot
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arqos
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arready
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arregion
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arsize
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_arvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awaddr
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awburst
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awcache
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awlen
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awlock
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awprot
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awqos
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awready
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awregion
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awsize
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_awvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_bid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_bready
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_bresp
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_bvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rdata
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rlast
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rready
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rresp
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_rvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_wdata
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_wlast
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_wready
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_wstrb
+set_instance_assignment -name VIRTUAL_PIN ON -to sb_axi_wvalid
+set_instance_assignment -name VIRTUAL_PIN ON -to scan_mode
+set_instance_assignment -name VIRTUAL_PIN ON -to timer_int
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_address_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_ecause_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_exception_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_insn_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_interrupt_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_tval_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_i_valid_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_address_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_ecause_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_exception_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_insn_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_interrupt_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_tval_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trace_rv_trace_pkt.trace_rv_i_valid_ip
+set_instance_assignment -name VIRTUAL_PIN ON -to trigger_pkt_any
+set_instance_assignment -name VIRTUAL_PIN ON -to trigger_pkt_any[0].tdata2
+set_instance_assignment -name VIRTUAL_PIN ON -to trigger_pkt_any[1].tdata2
+set_instance_assignment -name VIRTUAL_PIN ON -to trigger_pkt_any[2].tdata2
+set_instance_assignment -name VIRTUAL_PIN ON -to trigger_pkt_any[3].tdata2
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

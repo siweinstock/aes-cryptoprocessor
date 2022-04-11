@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at ifu_ifc_ctl.sv(82): object "idle" differs only in case from object "IDLE" in the same scope File: C:/intelFPGA_lite/projects/swerv)old/ifu/ifu_ifc_ctl.sv Line: 82
+Info (10281): Verilog HDL Declaration information at ifu_ifc_ctl.sv(82): object "wfm" differs only in case from object "WFM" in the same scope File: C:/intelFPGA_lite/projects/swerv)old/ifu/ifu_ifc_ctl.sv Line: 82
+Info (10281): Verilog HDL Declaration information at dec_gpr_ctl.sv(16): object "GPR_BANKS" differs only in case from object "gpr_banks" in the same scope File: C:/intelFPGA_lite/projects/swerv)old/dec/dec_gpr_ctl.sv Line: 16
